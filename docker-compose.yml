@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "7000:7000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_DEBUG=True
+      - FLASK_APP=app.py
+    env_file:
+      - .env
+    command: python app.py
